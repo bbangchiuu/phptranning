@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">Telephone</label>
-                                    <input type="text" name="phone" id="phone" class="form-control" placeholder="Phone"
+                                    <input type="text" name="telephone" id="phone" class="form-control" placeholder="Phone"
                                         aria-describedby="helpId">
                                 </div>
                                 <div class="form-group">
@@ -87,4 +87,5 @@
         </div>
     </div>
 </div>
+<script src="<?php echo base_url() ?>public/javascripts/register.js"></script>
 <?php $this->load->view('template/footer') ?>

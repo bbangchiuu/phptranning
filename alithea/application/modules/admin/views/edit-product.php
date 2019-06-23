@@ -21,11 +21,62 @@
                     <input type="text" class="form-control" name="pro_name_new" id="" aria-describedby="helpId" placeholder="">
                         <div><?php if(isset($error)){ echo $error ;} ?></div>
                 </div>
-                <div class="form-group m-g-b col-sm-6">
+                <div class="form-group m-g-b col-sm-12">
                     <label for="" class="tieumuc">Description</label>
                     <textarea class="form-control" rows="5" id="pro_desc" name="pro_desc"><?php echo $pro_detail['description'] ?></textarea>
 
                 </div>
+                <div class="form-group m-g-b col-sm-12">
+                    Thông số kỹ thuật
+
+                </div>
+
+                
+                            <div class="form-group col-sm-4">
+                                <label for="" class="tieumuc">Screen</label>
+                                <input type="text" name="screen" id="" class="form-control" placeholder="Screen" value="<?php if(isset($thongsokithuat)){ echo $thongsokithuat['screen']; }?>"
+                                    aria-describedby="helpId" required>             
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label for="" class="tieumuc">Operating System</label>
+                                <input type="text" name="operating_system" id="" class="form-control" placeholder="Operating System" value="<?php if(isset($thongsokithuat)){ echo $thongsokithuat['operating_system']; }?>"
+                                    aria-describedby="helpId" required>             
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label for="" class="tieumuc">RAM</label>
+                                <input type="text" name="RAM" id="" class="form-control" placeholder="RAM" value="<?php if(isset($thongsokithuat)){ echo $thongsokithuat['RAM']; }?>"
+                                    aria-describedby="helpId" required>             
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label for="" class="tieumuc">Memory</label>
+                                <input type="text" name="memory" id="" class="form-control" placeholder="Memory" value="<?php if(isset($thongsokithuat)){ echo $thongsokithuat['memory']; }?>"
+                                    aria-describedby="helpId" required>             
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label for="" class="tieumuc">CPU</label>
+                                <input type="text" name="CPU" id="" class="form-control" placeholder="CPU" value="<?php if(isset($thongsokithuat)){ echo $thongsokithuat['CPU']; }?>"
+                                    aria-describedby="helpId" required>             
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label for="" class="tieumuc">Memory Stick</label>
+                                <input type="text" name="memory_stick" id="" class="form-control" placeholder="Memory Stick" value="<?php if(isset($thongsokithuat)){ echo $thongsokithuat['memory_stick']; }?>"
+                                    aria-describedby="helpId" required>             
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label for="" class="tieumuc">SIM</label>
+                                <input type="text" name="SIM" id="" class="form-control" placeholder="SIM" value="<?php if(isset($thongsokithuat)){ echo $thongsokithuat['SIM']; }?>"
+                                    aria-describedby="helpId" required>             
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label for="" class="tieumuc">Battery Capacity</label>
+                                <input type="text" name="battery_capacity" id="" class="form-control" placeholder="Battery Capacity" value="<?php if(isset($thongsokithuat)){ echo $thongsokithuat['battery_capacity']; } ?>"
+                                    aria-describedby="helpId" required>             
+                            </div>
+
+            </div>
+            <div class="form-group m-g-b col-sm-12">
+                    Thông số khác
+
             </div>
                 <div class="row m-g-b">
                     <div class="form-group col-sm-4">
@@ -77,18 +128,21 @@
                 <div class="col-sm-12">                   
                     <p class="tieumuc">Old Imgae Detail</p>
                     <div class="row">
-
-                <?php if(isset($img_detail)){
-                        foreach($img_detail as $img){
-                        ?>     
-                <!---------------------------->
-                        <div class="col-sm-3">
-                            <img src="<?php echo base_url() ?>public/imageproducts/<?php echo $img['image_detail']?>" class="col-sm-12 img-edit-cat">
-                        </div>
-                <!---------------------------->
+                    <?php if(isset($img_detail)){
+                            foreach($img_detail as $img){
+                            ?>     
+                    <!---------------------------->
+                            <div class="col-sm-3">
+                                <img src="<?php echo base_url() ?>public/imageproducts/<?php echo $img['image_detail']?>" class="col-sm-12 img-edit-cat">
+                            </div>
+                    <!---------------------------->
                     <?php
                         }
-                    }?>  
+                    }else{ ?>
+                        <div class="col-sm-3">
+                            Không có ảnh
+                        </div>
+                    <?php } ?>  
 
                     </div>
                     

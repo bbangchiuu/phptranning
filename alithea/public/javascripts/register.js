@@ -182,4 +182,6 @@ function checkRegister() {
     } else {
         return true;
     }
+
+    //return false;
 }

@@ -1,0 +1,242 @@
+@media (min-width: 1199px) { .search_2{ display:none;}}
+@media (max-width: 1199px) {
+	#prodHot .row .col-lg-3{
+		margin-bottom:30px;
+		}
+	.prodCare .inner{
+		height:auto}
+	.navbar-nav>li>a{
+		padding-right:7px;
+		padding-left:7px;
+		font-size:90%;
+		}	
+}
+
+@media (max-width: 991px) {
+	#header{
+		position:static;
+		margin-top:0;
+		}
+	#header .container{
+		padding-right:0;
+		padding-left:0;
+		}
+	#header h1{ margin:0;}	
+	.navbar-brand{
+		float:none;
+		text-align:center;
+		border-right:none;
+		border-top: 5px solid #eb1c24;
+		}
+	.navbar-brand>img{
+		margin-top:6px;
+		display:inline-block}
+	.place, #slidebanner .item .desc, .adress_top, .hdTop ul, .hdRight .caret{
+		display:none;
+		}
+	.hdTop {
+		background: #404040;
+		overflow: hidden;
+		height: 38px;
+		position:absolute;
+		top:100px;
+		left:0;
+		width: 100%;
+	}
+	.navbar-collapse.collapse{ margin-top:40px;}
+	.navbar-toggle{ top:105px;}	
+	.hdRight .navbar-nav {
+    float: none;
+    height: auto;
+    background: #fff;
+    padding: 0 30px;
+}
+	#header .navbar-nav h2 a{
+	padding: 0 15px;
+    line-height: 28px;
+    color: #4a4a4a;
+	font-size:15px;
+	}
+	.hotLine{
+		float:left;
+		padding:0;
+		line-height:38px;
+		}
+	.search_2{
+		background-color:transparent;
+		line-height:38px;
+		width: 50px;
+		float: right;
+		margin: 0 15px 0 0;
+		}
+	.search input{
+		display:none;
+		}
+	.search .btn-search{
+		}
+	
+	#sale .row{
+		border:none;
+		}
+	#sale .row>div{
+		margin-bottom:20px;
+		}
+	#sale .row>div .inner{
+		overflow:hidden;
+		}
+	#sale img{
+		width:120px;
+		}
+	#sale .row>div .desc{
+		padding-top:15px;
+		padding-bottom:15px;
+		}	
+	
+	#slidebanner{ margin-top:38px;}
+	#whyme .inner{
+		background:none;
+		margin-top:0;
+		-moz-box-shadow:none;
+		-webkit-box-shadow:none;
+		box-shadow:none;
+		}
+	#pagehd .container{
+		padding-right:0;
+		padding-left:0;}
+	#pagehd h1{
+		color:#fff;
+		margin:0;
+		padding:10px;
+		border-bottom:3px solid transparent;
+		margin-bottom:0;
+		text-transform:uppercase;
+		font-size:180%;
+		float:none;
+		font-weight:bold;
+		}
+	.breadcrumb{
+		float:none;
+		background:#fac91d;
+		margin:0;
+		padding:10px;
+		color:#444;
+		}
+	.breadcrumb .fa{
+		color:#444;
+		}
+	.widget{
+		margin-bottom:10px;
+		}
+	.widget .widget-ct, .widget h3, .nav-sub-img{
+		display:none;
+		}
+	.widget .btn-toggle{
+		display:block;}
+	#showroom.widget, #video.widget{
+		width:48%;
+		}
+	#showroom.widget{
+		float:left;
+		}
+	#video.widget{
+		float:right;
+		}
+	.navsub{
+		position:relative;
+		top:0;
+		background:#f6f6f6;
+		}
+	.navsub .navsub-text{
+		width:100%;
+		}
+	.navsub ul{
+		margin:0;
+		}
+	.navsub .navsub-text>div{
+		float:none;
+		width:100%;
+		}
+	#bodyBt .col-lg-6:first-child .inner{
+		float:none;
+		}
+	#breadcrumb{
+		float:none;
+		padding:5px 15px;
+		-moz-border-radius:0;
+		-webkit-border-radius:0;
+		border-radius:0;}
+}
+
+@media (max-width: 767px) {
+	.newslist .news img{
+	float:none;
+	width:100%;
+	margin-right:0;
+	margin-bottom:15px;
+	}
+	.prodCare .inner .btn {
+    position: inherit;
+    right: auto;
+    bottom: auto;
+	margin-top:15px;
+	}
+	.prodCare .hdWiget li{
+		margin-bottom:10px;
+		}
+	#ftCopy .line{
+		width:320px;
+		margin-left:-160px;
+		}
+	.navbar-nav>li .navsub.in{
+		display:block;
+		}
+	#ftLink .col-lg-2:nth-child(2n+1){
+		clear:both;
+		}
+	#pagehd{
+		overflow:hidden;
+		}
+	
+	#pagehd h1{
+		font-size:140%;
+		}
+	#footer h2{
+		font-size:110%;
+		}
+	.navsub{ display:block;}
+}
+@media (max-width: 450px) {
+	#tabs ul.nav-tabs{
+		height:auto;
+		}
+	#tabs .nav-tabs>li{
+		float:none;
+		
+		margin-bottom:10px;
+		}
+	#tabs .nav-tabs>li>a{
+		overflow:hidden;
+		display:block;
+		}
+	#prodHot .inner img{ width:100%;}
+	#sale .sale_product, #sale img{ width:100%;}
+	.customer_home{ max-width:96%; padding-bottom: 40px; height:auto; margin-bottom: 40px;}
+	#rate .carousel-inner .avatar{ margin:auto; float:none;}
+	#rate .inner .rate-comment, .rate-name { padding: 5px 15px 5px 30px;  width: 100%; margin-top: 20px;}
+	.rate-content .carousel-indicators { left: 50%; bottom: -36px;}
+	.cd-top{ display:none;}	
+	.produt_home .hdWiget>h2:first-child{ text-indent:0;}
+	.produt_home .row { padding: 0 0px; max-width: 420x; margin: auto;	}
+	.prodCare .inner .btn {  position: absolute;  right: 6px;  bottom: 29px;}
+	#bodyBt	.hdProd h2{ font-size:18px;}
+	#bodyBt li{ width:100%;}
+	#prodHot .hdWiget h2 {margin: 20px 0 0 0 !important;}
+	#slidebanner .carousel-indicators{ width:92%;}
+	.produt_home div.col-lg-3, .produt_home div.col-lg-4{ border-right:none;}
+	.modal.fade .modal-dialog{ max-width:92%;}
+	.detail .row div.col-lg-4{padding: 20px 40px 40px 40px;}
+	.search{ display:none;}
+		
+}
+}
+

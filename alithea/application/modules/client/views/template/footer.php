@@ -53,7 +53,7 @@
             <h4 class="add-h4 wow bounceIn" data-wow-delay="0.1s">Any questions?</h4>
             <div class="textwidget custom-html-widget">
               <hr class="no_line" style="margin: 0 auto 20px;">
-              <div class="google_font1 wow bounceIn" data-wow-delay="0.2s">
+              <div class="google_font1 wow bounceIn" data-wow-delay="0.2s" style="color: white">
               0986818699
               </div>
               <p class="big wow bounceIn" data-wow-delay="0.3s">
@@ -99,8 +99,7 @@
 <script src="<?php echo base_url() ?>public/vendor/js/wow.js"></script>
 <script src="<?php echo base_url() ?>public/vendor/js/jquery.countdown.min.js"></script>
 <script src="<?php echo base_url() ?>public/javascripts/adminn.js"></script>
-<script src="<?php echo base_url() ?>public/javascripts/register.js"></script>
-<script src="<?php echo base_url() ?>public/javascripts/checkouts.js"></script>
+
 </body>
 
 </html>

@@ -17,7 +17,7 @@
 		</div>
 	</div>
 </div>
-</div>
+
 <div class="col-sm-9 session">
 	<div class="row">
 		<div class="w-100 tieude-bang">

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapters [
+    <!ELEMENT chapters (chapter1, chapter2)>
+
+    <!ELEMENT chapter1 (mainTopic, subTopic1, subTopic2, subTopic3) >
+
+    <!ELEMENT chapter2 (mainTopic, subTopic1, subTopic2, subTopic3, subTopic4, subTopic5, subTopic6, subTopic7, subTopic8, subTopic9, subTopic10) >
+    <!ELEMENT mainTopic (#PCDATA) >
+    <!ELEMENT subTopic1 (#PCDATA) >
+    <!ELEMENT subTopic2 (#PCDATA) >
+    <!ELEMENT subTopic3 (#PCDATA) >
+    <!ELEMENT subTopic4 (#PCDATA) >
+    <!ELEMENT subTopic5 (#PCDATA) >
+    <!ELEMENT subTopic6 (#PCDATA) >
+    <!ELEMENT subTopic7 (#PCDATA) >
+    <!ELEMENT subTopic8 (#PCDATA) >
+    <!ELEMENT subTopic9 (#PCDATA) >
+    <!ELEMENT subTopic10 (#PCDATA) >
+]>
+
+<chapters>
+    <chapter1>
+        <mainTopic>HTML MARKUP AND DOCUMENT STRUCTURE</mainTopic>
+        <subTopic1>The Basics of Markup</subTopic1>
+        <subTopic2>Anatomy of an HTML Document</subTopic2>
+        <subTopic3>The Document Object Model</subTopic3>
+    </chapter1>
+    <chapter2>
+        <mainTopic>HOW CSS WORKS</mainTopic>
+        <subTopic1>The Anatomy of CSS Rule</subTopic1>
+        <subTopic2>Contexual Selectors</subTopic2>
+        <subTopic3>Specialized Contextual Selectors</subTopic3>
+        <subTopic4>IDs and Classes</subTopic4>
+        <subTopic5>Attibute Selectors</subTopic5>
+        <subTopic6>Pseduo-Classes</subTopic6>
+        <subTopic7>Pseduo-Elements</subTopic7>
+        <subTopic8>Inheritance</subTopic8>
+        <subTopic9>The Cascade</subTopic9>
+        <subTopic10>Rule Declaration</subTopic10>
+    </chapter2>
+</chapters>

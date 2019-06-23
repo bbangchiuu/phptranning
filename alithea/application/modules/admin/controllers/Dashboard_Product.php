@@ -74,7 +74,7 @@ class Dashboard_Product extends MY_Controller
         if(isset($_POST['edit_pro'])){
 
             $filesCount = count($data['img_detail']);
-
+            $img_id = array();
             for($i = 0; $i < $filesCount; $i++){
                 $img_id[$i] = $data['img_detail'][$i]['img_id'];
             }
@@ -83,6 +83,7 @@ class Dashboard_Product extends MY_Controller
             $data['error'] = $this->upload_data_product(2, $pro_id, $img_id);
         }
 
+        $data['thongsokithuat'] = $this->Product_model->thongsokithuat($pro_id);
         $data['title'] ='Edit products';
         $data['list_cat'] = $this->Categories_model->get_categories();
         $data['pro_detail'] = $this->Product_model->get_pro($pro_id);
@@ -173,12 +174,45 @@ class Dashboard_Product extends MY_Controller
                         if($this->Product_model->insert_pro($new_pro) == FALSE){
                             echo "that bai";die;
                         }
-                        $pro_sp = $this->Product_model->get_id($this->input->post('pro_name'));
+                        //$pro_sp = $this->Product_model->get_id($this->input->post('pro_name'));
+                        $pro_sp = $this->Product_model->get_id_sp($new_pro);
+                        // var_dump($new_pro);
+                        // var_dump($pro_sp);die;
                     }else{
                         if($this->Product_model->update_pro($pro_id, $new_pro) == FALSE){
                             echo "that bai";die;
                         }
                     }                                    
+
+                    if($method == 1){
+                        $thongsokithuat = array(
+                            'pro_id' => $pro_sp['pro_id'],
+                            'screen' => $_POST['screen'],
+                            'operating_system' => $_POST['operating_system'],
+                            'RAM' => $_POST['RAM'],
+                            'memory' => $_POST['memory'],
+                            'CPU' => $_POST['CPU'],
+                            'memory_stick' => $_POST['memory_stick'],
+                            'SIM' => $_POST['SIM'],
+                            'battery_capacity' => $_POST['battery_capacity'],
+                        );
+                        $this->Product_model->insert_thongsokithuat($thongsokithuat);
+                    }else{
+                        $thongsokithuat = array(
+                            'pro_id' => $pro_id,
+                            'screen' => $_POST['screen'],
+                            'operating_system' => $_POST['operating_system'],
+                            'RAM' => $_POST['RAM'],
+                            'memory' => $_POST['memory'],
+                            'CPU' => $_POST['CPU'],
+                            'memory_stick' => $_POST['memory_stick'],
+                            'SIM' => $_POST['SIM'],
+                            'battery_capacity' => $_POST['battery_capacity'],
+                        );
+                        //$this->Product_model->insert_thongsokithuat($thongsokithuat);
+                        $this->Product_model->update_thongsokithuat($pro_id, $thongsokithuat);
+                    }
+                    
 
                     //upload img detail
                     if(!empty($_FILES['images_detail']['name'])){

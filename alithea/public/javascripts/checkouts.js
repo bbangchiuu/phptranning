@@ -1,39 +1,46 @@
-function type_email() {
+function type_email_check() {
     var textInput_email = document.forms["checkttkh"]["email"].outerHTML;
     textInput_email += '<p class="danghoatdong">Email is required!</p>';
     document.forms["checkttkh"]["email"].outerHTML = textInput_email;
 }
 
-function type_phone() {
-  var textInput_phone = document.forms["checkttkh"]["phone"].outerHTML;
+function type_phone_check() {
+  var textInput_phone = document.forms["checkttkh"]["telephone"].outerHTML;
   textInput_phone += '<p class="danghoatdong">Phone is required!</p>';
-  document.forms["checkttkh"]["phone"].outerHTML = textInput_phone;
+  document.forms["checkttkh"]["telephone"].outerHTML = textInput_phone;
 }
-function type_address() {
+function type_address_check() {
     var textInput_address = document.forms["checkttkh"]["address"].outerHTML;
     textInput_address += '<p class="danghoatdong">Address is required!</p>';
     document.forms["checkttkh"]["address"].outerHTML = textInput_address;
 }
 
-function type_fullname() {
+function type_fullname_check() {
     var textInput_fullname = document.forms["checkttkh"]["fullname"].outerHTML;
     textInput_fullname += '<p class="danghoatdong">Full name is required!</p>';
     document.forms["checkttkh"]["fullname"].outerHTML = textInput_fullname;
 }
 
 function checkthongtin() {
-    var error = false;
-    var email = document.forms["checkttkh"]["email"].value;
-    var fullname = document.forms["checkttkh"]["fullname"].value;
-    var addresss = document.forms["checkttkh"]["address"].value;
-    var phone = document.forms["checkttkh"]["phone"].value;
+    var testCheck = document.getElementById("test").value;
 
-    if (fullname.length <= 0) {
+    console.log(testCheck)
+    var error = false;
+    var email = document.forms["checkttkh"].email.value;
+    var fullnames = document.forms["checkttkh"].fullname.value;
+    var addresss = document.forms["checkttkh"].address.value;
+    var telephone = document.forms["checkttkh"].telephone.value;
+
+    // console.log(fullnames);
+    // console.log(addresss);
+    // console.log(telephone);
+    // console.log(email);
+    if (fullnames.length <= 0) {
         error = true;
         if (document.forms["checkttkh"]["fullname"].nextElementSibling) {
             document.forms["checkttkh"]["fullname"].nextElementSibling.remove();
         }
-        type_fullname();
+        type_fullname_check();
     } else {
         if (document.forms["checkttkh"]["fullname"].nextElementSibling) {
             document.forms["checkttkh"]["fullname"].nextElementSibling.remove();
@@ -46,7 +53,7 @@ function checkthongtin() {
         if (document.forms["checkttkh"]['address'].nextElementSibling) {
             document.forms["checkttkh"]['address'].nextElementSibling.remove();
         }
-        type_address();
+        type_address_check();
     } else {
         if (document.forms["checkttkh"]['address'].nextElementSibling) {
             document.forms["checkttkh"]['address'].nextElementSibling.remove();
@@ -54,15 +61,15 @@ function checkthongtin() {
         
     }
 
-    if (phone.length <= 0) {
+    if (telephone.length <= 0) {
         error = true;
-        if (document.forms["checkttkh"]['phone'].nextElementSibling) {
-            document.forms["checkttkh"]['phone'].nextElementSibling.remove();
+        if (document.forms["checkttkh"]['telephone'].nextElementSibling) {
+            document.forms["checkttkh"]['telephone'].nextElementSibling.remove();
         }
-        type_phone();
+        type_phone_check();
     } else {
-        if (document.forms["checkttkh"]['phone'].nextElementSibling) {
-            document.forms["checkttkh"]['phone'].nextElementSibling.remove();
+        if (document.forms["checkttkh"]['telephone'].nextElementSibling) {
+            document.forms["checkttkh"]['telephone'].nextElementSibling.remove();
         }
         
     }
@@ -72,7 +79,7 @@ function checkthongtin() {
         if (document.forms["checkttkh"]['email'].nextElementSibling) {
             document.forms["checkttkh"]['email'].nextElementSibling.remove();
         }
-        type_email();
+        type_email_check();
     } else {
         if (document.forms["checkttkh"]['email'].nextElementSibling) {
             document.forms["checkttkh"]['email'].nextElementSibling.remove();
@@ -84,19 +91,6 @@ function checkthongtin() {
         return false;
     } else {
         return true;
-    }
-}
-
-function rt_xacnhandonhang() {
-    var xacnha_norder = document.getElementById("defaultUnchecked");
-
-    var checbox_dieukhoan = document.forms["xacnhandonhang_form"]["checbox_dieukhoan"];
-
-    if(xacnha_norder.checked == true){
-        return true;
-    }else{
-        document.getElementById("checbox_dieukhoan").innerHTML = "Bạn chưa đồng ý với điều khoản của chúng tôi"
-        return false;
     }
 
     return false;

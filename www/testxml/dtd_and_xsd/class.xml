@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE school [
+	<!ELEMENT school (fpt, vin)>
+	<!ELEMENT fpt (class*)>
+	<!ELEMENT vin (class*)>
+	<!ELEMENT class (student)>
+	<!ELEMENT student (id, name, phone, address)>
+	<!ELEMENT id (#PCDATA)>
+	<!ELEMENT name (#PCDATA)>
+	<!ELEMENT phone (#PCDATA)>
+	<!ELEMENT address (#PCDATA)>
+
+	<!ATTLIST school address CDATA #IMPLIED>
+	<!ATTLIST class name CDATA #IMPLIED>
+]>
+<school address="x" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<fpt>	
+		<class name="T1807E">
+			<student>
+				<id></id>
+				<name></name>
+				<phone></phone>
+				<address></address>
+			</student>
+			<student>
+				<id></id>
+				<name></name>
+				<phone></phone>
+				<address></address>
+			</student>
+		</class>
+		<class name="T1809E">
+			<student>
+				<id></id>
+				<name></name>
+				<phone></phone>
+				<address></address>
+			</student>
+		</class>
+	</fpt>
+	<vin>	
+		<class name="T1807E">
+			<student>
+				<id></id>
+				<name></name>
+				<phone></phone>
+				<address></address>
+			</student>
+			<student>
+				<id></id>
+				<name></name>
+				<phone></phone>
+				<address></address>
+			</student>
+		</class>
+		<class name="T1809E">
+			<student>
+				<id></id>
+				<name></name>
+				<phone></phone>
+				<address></address>
+			</student>
+		</class>
+	</vin>
+</school>

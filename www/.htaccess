@@ -1,0 +1,3 @@
+RewriteEngine ON
+RewriteBase /www/
+RewriteRule ^trang-chu$ demo/indexPerson.php

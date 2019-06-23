@@ -53,6 +53,8 @@ $route['default_controller'] = 'client/User_client';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['home'] = 'client/User_client/home';
+
 $route['admin/Dashboard'] = 'admin/Dashboard';
 $route['admin/list-users'] = 'admin/Dashboard/list_users';
 $route['admin/list-users/delete-user/(:num)'] = 'admin/Dashboard/delete_user/$1';

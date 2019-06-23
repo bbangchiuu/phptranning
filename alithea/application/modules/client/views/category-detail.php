@@ -140,7 +140,7 @@
                                                     </p>
                                                 </div>
                                                 <div class="row text-center">
-                                                    <a href="" class="col-md-12"><button type="submit" class="btn btn-primary kieu2 col-sm-12">Add to cart</button></a>
+                                                    <a href="<?php echo base_url() ?>product-detail/<?php echo $val['pro_id'] ?>" class="col-md-12"><button type="submit" class="btn btn-primary kieu2 col-sm-12">Detail</button></a>
                                                 </div>
                                             </div>
                                         </div>

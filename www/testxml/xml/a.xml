@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<shool address="889923"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <fpt>
+    <class name="T1807E">
+			<student>
+				<id></id>
+				<name></name>
+				<phone></phone>
+				<address></address>
+			</student>
+			<student>
+				<id></id>
+				<name></name>
+				<phone></phone>
+				<address></address>
+			</student>
+		</class>
+  </fpt>
+  <vin>	
+		<class name="T1807E">
+			<student>
+				<id></id>
+				<name></name>
+				<phone></phone>
+				<address></address>
+			</student>
+			<student>
+				<id></id>
+				<name></name>
+				<phone></phone>
+				<address></address>
+			</student>
+		</class>
+		<class name="T1809E">
+			<student>
+				<id></id>
+				<name></name>
+				<phone></phone>
+				<address></address>
+			</student>
+		</class>
+	</vin>
+</shool>

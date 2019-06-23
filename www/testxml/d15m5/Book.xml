@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Sample.xsl" ?>
+<Catalog xmlns="http://www.BookCatalog.com"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.BookCatalog.com BookSchema.xsd">
+
+        <Book>
+            <Author>Gamabardella, Matthew</Author>
+            <Title>XML DEvelop</Title>
+            <Genre>Computer</Genre>
+            <Price>44</Price>
+            <Publish>2000-10-01</Publish>
+            <Description>An in....</Description>
+        </Book>
+</Catalog>

@@ -38,7 +38,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="row">
-                            <div class="form-group col-sm-4">
+                            <div class="form-group col-sm-12">
                                 <label for="" class="tieumuc">Name</label>
                                 <input type="text" name="pro_name" id="pro_name" class="form-control" placeholder="Product Name"
                                     aria-describedby="helpId" required>
@@ -50,7 +50,57 @@
                                     ?>
                                 </div>
                             </div>
-                            <div class="form-group col-sm-6">
+                            <div class="form-group col-sm-12">
+                                Thông số kỹ thuật
+                            </div>
+                            
+                            <div class="form-group col-sm-4">
+                                <label for="" class="tieumuc">Screen</label>
+                                <input type="text" name="screen" id="" class="form-control" placeholder="Screen"
+                                    aria-describedby="helpId" required>             
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label for="" class="tieumuc">Operating System</label>
+                                <input type="text" name="operating_system" id="" class="form-control" placeholder="Operating System"
+                                    aria-describedby="helpId" required>             
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label for="" class="tieumuc">RAM</label>
+                                <input type="text" name="RAM" id="" class="form-control" placeholder="RAM"
+                                    aria-describedby="helpId" required>             
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label for="" class="tieumuc">Memory</label>
+                                <input type="text" name="memory" id="" class="form-control" placeholder="Memory"
+                                    aria-describedby="helpId" required>             
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label for="" class="tieumuc">CPU</label>
+                                <input type="text" name="CPU" id="" class="form-control" placeholder="CPU"
+                                    aria-describedby="helpId" required>             
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label for="" class="tieumuc">Memory Stick</label>
+                                <input type="text" name="memory_stick" id="" class="form-control" placeholder="Memory Stick"
+                                    aria-describedby="helpId" required>             
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label for="" class="tieumuc">SIM</label>
+                                <input type="text" name="SIM" id="" class="form-control" placeholder="SIM"
+                                    aria-describedby="helpId" required>             
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label for="" class="tieumuc">Battery Capacity</label>
+                                <input type="text" name="battery_capacity" id="" class="form-control" placeholder="Battery Capacity"
+                                    aria-describedby="helpId" required>             
+                            </div>
+                            <div class="form-group col-sm-4">
+                                
+                            </div>
+                            <div class="form-group col-sm-12">
+                                Thông số khác
+                            </div>
+                            <div class="form-group col-sm-12">
                                 <label for="" class="tieumuc">Description</label>
                                 <textarea class="form-control" rows="5" id="pro_desc" name="pro_desc"></textarea>
                             </div>

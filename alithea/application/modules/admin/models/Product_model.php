@@ -8,6 +8,23 @@ class Product_model extends MY_Model
         parent:: __construct();    
     }
     
+    public function thongsokithuat($pro_id){
+        $query = $this->db->query("SELECT * FROM specifications_pro WHERE pro_id = $pro_id");
+        return $query->row_array();
+    }
+
+    public function update_thongsokithuat($pro_id, $data){
+        $timSP = array(
+            'pro_id' => $pro_id
+        );
+        $query = $this->db->where($timSP)->update('specifications_pro', $data);
+        return $query;
+    }
+
+    public function insert_thongsokithuat($data){
+        return $this->db->insert('specifications_pro', $data);
+    }
+
     public function list_pag_pro($limit_per_page, $start_index){
         $query = $this->db->query("SELECT * FROM products ORDER BY uploaded_on DESC LIMIT $start_index, $limit_per_page");
 
@@ -38,6 +55,12 @@ class Product_model extends MY_Model
 
         $query = $this->db->query("SELECT * FROM image_detail WHERE pro_id = $pro_id");
         return $query->result_array();
+    }
+
+    public function get_id_sp($data){
+        //var_dump($data);die;
+        $query = $this->db->select('*')->from('products')->where($data)->get()->row_array();
+        return $query;
     }
 
     public function get_id($pro_name){

@@ -1,0 +1,70 @@
+/*========= RESET STYLE TRÌNH DUYỆT ========*/
+*{
+	margin:0px;           
+    padding:0px;  
+}
+/*========= NỘI DUNG ========*/
+body{
+	background:url(bg_2cwebvn.png) repeat;
+}
+#wrapper{ margin:0 auto;}
+h1{margin:50px 0px; width: 450px; color:#DB2E66;}
+
+/*========= ĐỊNH DẠNG FORM ========*/
+#form{
+	margin:100px;
+	width: 350px;
+	outline: 5px solid #ccc;
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin:0 auto;
+}
+#form label{
+	font:bold 11px arial;
+	color: #565656;
+	padding-left: 1px;
+}
+#form label.require{color: #f00;}
+#form input[type="text"]{
+	height: 30px;
+	margin-bottom: 8px;
+	padding: 5px;
+	font: 12px arial;
+	color: #0060a3;
+}
+#form textarea{
+	width: 340px;
+	height: 80px;
+	resize: none;
+	margin: 0 0 8px 1px;
+	padding: 5px;
+	font: 12px arial;
+	color: #0060a3;
+}
+#form img{
+	margin-bottom: 8px;
+}
+#form input[type="submit"]{
+	background-color: #0064aa;
+	border: none;
+	color: #fff;
+	padding: 5px 8px;
+	cursor: pointer;
+	font:bold 12px arial;
+}
+/*========= THÔNG BÁO ========*/
+.error{
+	border: 2px solid #DB2E66;
+}
+.captcha_status{
+	width: 370px;
+	padding: 10px; margin:10px auto;
+	font: 14px arial;
+	color: #87022e;
+	text-align:center;
+	display: none;
+	border:2px solid #DB2E66;
+}
+.captcha_status_error{
+	color: #87022e;                
+}

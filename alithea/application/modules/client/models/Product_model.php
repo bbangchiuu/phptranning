@@ -8,6 +8,16 @@ class Product_model extends MY_Model
         parent:: __construct();    
     }
 
+    public function thongsokithuat($pro_id){
+        $query = $this->db->query("SELECT * FROM specifications_pro WHERE pro_id = $pro_id");
+        return $query->row_array();
+    }
+    
+    public function sp_cung_theloai($cat_id){
+        $query = $this->db->query("SELECT * FROM products WHERE cat_id = $cat_id LIMIT 4");
+        return $query->result_array();
+    }
+
     public function insert_orderdetail($data = array()){
         return $this->db->insert_batch('orderdetails',$data);
     }
@@ -66,7 +76,7 @@ class Product_model extends MY_Model
     }
 
     public function hot_pro(){
-        $query = $this->db->query("SELECT * FROM products LIMIT 12");
+        $query = $this->db->query("SELECT * FROM products LIMIT 4");
 
         if($query->num_rows() > 0){
             return $query->result_array();

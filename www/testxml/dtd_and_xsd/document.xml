@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document [
+	<!ELEMENT document (name, description, logo, list_post)>
+
+	<!ELEMENT name (#PCDATA)>
+	<!ELEMENT description (#PCDATA)>
+	<!ELEMENT logo (#PCDATA)>
+
+	<!ELEMENT list_post (class*)>
+
+	<!ELEMENT class (post)>
+
+	<!ELEMENT post (title, content, description, image, createdate, tag)>
+
+	<!ELEMENT title (#PCDATA)>
+	<!ELEMENT content (#PCDATA)>
+	<!ELEMENT description (#PCDATA)>
+	<!ELEMENT image (#PCDATA)>
+	<!ELEMENT createdate (#PCDATA)>
+	<!ELEMENT tag (#PCDATA)>
+
+]>
+<document>	
+	<category>
+		<name> category 1</name>
+		<description></description>
+		<logo></logo>
+		<list_post>
+			<post>
+				<title> post 1</title>
+				<content></content>
+				<description></description>
+				<image></image>
+				<createdate></createdate>
+				<tag></tag>
+			</post>
+			<post>
+				<title> post 2</title>
+				<content></content>
+				<description></description>
+				<image></image>
+				<createdate></createdate>
+				<tag></tag>
+			</post>
+			<post>
+				<title> post 3</title>
+				<content></content>
+				<description></description>
+				<image></image>
+				<createdate></createdate>
+				<tag></tag>
+			</post>
+		</list_post>
+	</category>
+	<category>
+		<name> category 2</name>
+		<description></description>
+		<logo></logo>
+		<list_post>
+			<post>
+				<title> post 1</title>
+				<content></content>
+				<description></description>
+				<image></image>
+				<createdate></createdate>
+				<tag></tag>
+			</post>
+			<post>
+				<title> post 4</title>
+				<content></content>
+				<description></description>
+				<image></image>
+				<createdate></createdate>
+				<tag></tag>
+			</post>
+			<post>
+				<title> post 5</title>
+				<content></content>
+				<description></description>
+				<image></image>
+				<createdate></createdate>
+				<tag></tag>
+			</post>
+		</list_post>
+	</category>
+</document>

@@ -6,6 +6,13 @@ class Dashboard extends MY_Controller
         parent::__construct();
         $this->load->model('Users_model');
         $this->load->model('Orders_model');
+
+        $this->load->library('rest', array(  
+            'server' => 'http://localhost:8080/alithea/api/Api_users/',  
+            'http_user' => 'admin',  
+            'http_pass' => '1234',  
+            'http_auth' => 'basic' // or 'digest'  
+        ));  
     }
 
     function checkAdmin(){
@@ -31,31 +38,40 @@ class Dashboard extends MY_Controller
 
             if($kt_email != NULL || $kt_username != NULL){
                 if($kt_email != NULL){
-                    $data['err_email'] = "email nay da dc su dung";
+                    $data['err_email'] = "email already exist";
                 }
                 if($kt_username != NULL){
                     $data['err_username'] = "username already exist";
                 }
             }else{
+                
                 $new_user = array(
                     'firstname' => $this->input->post('firstname'),
                     'lastname' => $this->input->post('lastname'),
                     'email' => $this->input->post('email'),
                     'username' => $this->input->post('username'),
-                    'password' => md5($this->input->post('password')),
-                    'telephone' => $this->input->post('phone'),
+                    'password' => $this->input->post('password'),
+                    'telephone' => $this->input->post('telephone'),
                     'address' => $this->input->post('address'),
                     'quyenAdmin' => '1'
                 );
-                
-                if($this->Users_model->insert($new_user) == FALSE){
-                    $data['err_insert'] = "Error";
-                }else{
+
+                // if($this->Users_model->insert($new_user) == FALSE){
+                //     $data['err_insert'] = "Error";
+                // }else{
                     
-                    redirect(site_url('admin/Dashboard'));
-                }
+                //     redirect(site_url('admin/Dashboard'));
+                // }
+                
+                if($this->rest->post('user_admin', $new_user) == FALSE){
+                    $data['err_insert'] = "Error";
+                }else{                  
+                    redirect(site_url('admin/list-users'));
+                };
+                
             }           
         }
+
         $data['title'] = 'Register';
         $this->load->view('admin/register-admin', $data);
     }
@@ -63,13 +79,6 @@ class Dashboard extends MY_Controller
     function list_users(){
         $this->checkAdmin();
 
-        $this->load->library('rest', array(  
-            'server' => 'http://localhost:8080/alithea/api/Api_users/',  
-            'http_user' => 'admin',  
-            'http_pass' => '1234',  
-            'http_auth' => 'basic' // or 'digest'  
-        ));  
-        
         $result = $this->rest->get('users');  
 
         foreach($result as $val){
@@ -82,22 +91,24 @@ class Dashboard extends MY_Controller
         $this->load->view('admin/list-users', $data);
     }
     
+    function detail_user(){
+        $this->checkAdmin();
+
+        $user_id = $_GET['id'];
+        //var_dump($this->rest->get('user'));die;
+        $result = $this->rest->get("user?user_id=$user_id");  
+        var_dump($result);
+    }
+
     function delete_user($user_id){
         $this->checkAdmin();
+
+        if($this->rest->delete("user/$user_id")){
+            redirect(site_url('admin/list-users'));
+        }
         
-        $this->load->library('rest', array(  
-            'server' => 'http://localhost:8080/alithea/api/Api_users/',  
-            'http_user' => 'admin',  
-            'http_pass' => '1234',  
-            'http_auth' => 'basic' // or 'digest'  
-        ));  
-        $data = array(
-            'user_id' => $user_id
-        );
-        $this->rest->delete('user');
-        //var_dump($result);die;
-        //$this->Users_model->delete_user($user_id);
-        redirect(site_url('admin/list-users'));
+        print_r($this->rest->delete("user/$user_id"));       
+        
     }
 
     function orders(){

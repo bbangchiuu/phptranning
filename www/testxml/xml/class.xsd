@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:element name="school">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="fpt">
+          <xsd:sequence>
+            <xsd:element name="class">   
+              <xsd:sequence>
+                <xsd:element name="student">
+                  <xsd:sequence>
+                    <xsd:element name="id" type="xsd:string"/>
+                    <xsd:element name="name" type="xsd:string"/>
+                    <xsd:element name="phone" type="xsd:string"/>
+                    <xsd:element name="address" type="xsd:string"/>
+                  </xsd:sequence>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:element>
+
+        <xsd:element name="vin" type="fpt_type"/>
+
+      </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:attribute name="address" type="xsd:string"/>
+    
+  </xsd:element>
+
+</xsd:schema>

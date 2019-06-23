@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>public/stylesheets/ipadnho.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>public/stylesheets/iphone.css">
     <link rel="shortcut icon" type="image/ico" href="<?php echo base_url() ?>public/favicon.ico"/>
+    <link rel="stylesheet" href="<?php echo base_url() ?>public/stylesheets/app.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>public/stylesheets/styles.css">
     <style>
         .danghoatdong{
@@ -53,7 +54,7 @@
                     <i class="fa fa-shopping-cart"></i>
 
                     <?php if(isset($_SESSION['qty_order'])) { ?>
-                    <span class="badge badge-light custom-badge">
+                    <span class="badge badge-light custom-badge" id="qty_order">
                         <?php echo $_SESSION['qty_order'] ?>
                     </span>
                     <?php } ?>       

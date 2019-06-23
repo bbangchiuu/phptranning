@@ -23,9 +23,10 @@
                 <table class="table table-hover box">
                     <thead>
                         <tr>
-                            <th scope="col">Product</th>
-                            <th scope="col">Price</th>
+                            <th scope="col">Product</th>                          
                             <th scope="col">Quantity</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Color</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -43,12 +44,29 @@
                                     <input type="hidden" name="pro_ids[]" value="<?php echo $val['pro_id'] ?>">
                                 </div>
                             </td>
+                            
                             <td>
                                 <div class="input-group col-sm-5 m-t-50">
                                 <?php echo $val['pro_price'] ?>
                                 </div>
                             </td>
-                            
+                            <td>
+                                <div class="input-group col-sm-5 m-t-50">
+                                   
+                                <div class="custom-radios">
+                                    <?php if($val['color_pro'] == 'black'){ ?>
+                                        <div class="p-3 mb-2 bg-dark text-white"></div>
+                                    <?php }else if($val['color_pro'] == 'blue'){ ?>
+                                        <div class="p-3 mb-2 bg-primary text-white"></div>
+                                    <?php }else if($val['color_pro'] == 'yellow'){ ?>
+                                        <div class="p-3 mb-2 bg-warning text-dark"></div>
+                                    <?php }else if($val['color_pro'] == 'red'){ ?>
+                                        <div class="p-3 mb-2 bg-danger text-white"></div>
+                                    <?php } ?>
+                                </div>
+
+                                </div>
+                            </td>
                         </tr>
                         <?php } ?>                   
                     </tbody>
@@ -119,5 +137,19 @@
         </div>
     </div>
 </div>
+<script>
+function rt_xacnhandonhang() {
+    var xacnha_norder = document.getElementById("defaultUnchecked");
 
+    var checbox_dieukhoan = document.forms["xacnhandonhang_form"]["checbox_dieukhoan"];
+
+    if(xacnha_norder.checked == true){
+        return true;
+    }else{
+        document.getElementById("checbox_dieukhoan").innerHTML = "Bạn chưa đồng ý với điều khoản của chúng tôi"
+        return false;
+    }
+
+}
+</script>
 <?php $this->load->view('template/footer') ?>
