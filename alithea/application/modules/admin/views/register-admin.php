@@ -110,7 +110,7 @@
                         </div>
                         <button type="submit" class="submit-reg btn btn-success btn-block col-sm-6 offset-sm-3" onclick="return checkRegister()" name="register">Register</button>
                     </form>
-                    <a href="<?php echo base_url() ?>admin/Dashboard/" style="color:red;">Quay lại</a>
+                    <a href="<?php echo base_url() ?>admin/Dashboard/" style="color:blue;">Quay lại</a>
                 </div>
             </div>
         </div>

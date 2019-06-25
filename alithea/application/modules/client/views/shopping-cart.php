@@ -111,7 +111,7 @@
                 </table>
                 <p class="sangbenphai"> <button class="btn btn-success btn-block t-30 nut-checkout" name="dathang">Đặt hàng</button></p>
 
-                <p class="sangbenphai" id="total_price"><a href="" class="btn btn-danger btn-block p-30 nut-checkout"><?php echo $_SESSION['total_price'] ?></a></p>
+                <p class="sangbenphai" id="total_price"><a href="" class="btn btn-danger btn-block p-30 nut-checkout"><?php echo $_SESSION['total_price'] ?>$</a></p>
                 </form>
                 <?php }else { ?>
                     

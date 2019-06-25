@@ -4,15 +4,7 @@
         
     </header>
 </div>
-<div class="col-sm-8 offset-sm-2">
-    <div class="row">
-    <?php if(isset($_SESSION['success'])){ ?>
-        <div class="alert alert-success text-center wow bounceInLeft col-sm-12 " data-wow-delay="0.1" role="alert">
-            <strong><?php echo $_SESSION['success'] ?></strong>       
-        </div>       
-    <?php } ?>
-    </div>
-</div>
+
 <section class="session1">
     <div class="row">
         <h2 class="text-center title-block wow bounceIn m-t-100" data-wow-delay="0.1s" data-wow-offset="50">
@@ -138,5 +130,11 @@
         </div>
     </div>
 </section>
+<?php if(isset($_SESSION['success_order'])){ ?>
+    <script>
 
+    alert("Đặt hàng thành công");
+
+    </script>
+<?php } ?>
 <?php $this->load->view('template/footer') ?>

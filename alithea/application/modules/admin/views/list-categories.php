@@ -63,9 +63,12 @@
                                 </a>
 							</td>
 							<td>
-								<a class="delete-user" href="<?php echo base_url() ?>/admin/detele_cat/<?php echo $val['cat_id'] ?>" > 
+                                <a class="delete-user" data-toggle="modal" data-href="<?php echo base_url() ?>admin/detele_cat/<?php echo $val['cat_id'] ?>" data-target="#confirm-delete">
+									<i class="fa fa-trash-alt list-users" aria-hidden="true"></i>
+								</a>
+								<!-- <a class="delete-user" href="<?php echo base_url() ?>/admin/detele_cat/<?php echo $val['cat_id'] ?>" > 
                                     <i class="fa fa-trash-alt list-users" aria-hidden="true"></i>
-                                </a>
+                                </a> -->
                             </td>
                         </tr>
 

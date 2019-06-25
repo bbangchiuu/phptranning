@@ -42,7 +42,7 @@
 							<th scope="col">Email</th>
 							<th scope="col">Address</th>
 							<th scope="col">Telephone</th>
-							<th scope="col">Detail</th>
+							<!-- <th scope="col">Detail</th> -->
 							<th scope="col">Delete</th>
 						</tr>
 					</thead>
@@ -116,13 +116,17 @@
 								</p>
 								<?php } ?>
 							</td>
-							<td>
+							<!-- <td>
+								
 								<a href="<?php echo base_url() ?>admin/Dashboard/detail_user?id=<?php echo $val['user_id'] ?>"> <i class="fa fa-edit list-users" aria-hidden="true"></i></a>
-							</td>
+								
+							</td> -->
 							<td>
+								<?php if($val['quyenAdmin'] == false){ ?>
 								<a class="delete-user" data-toggle="modal" data-href="<?php echo base_url() ?>admin/list-users/delete-user/<?php echo $val['user_id'] ?>" data-target="#confirm-delete">
 									<i class="fa fa-trash-alt list-users" aria-hidden="true"></i>
 								</a>
+								<?php } ?>
 							</td>
 						</tr>
 					</tbody>

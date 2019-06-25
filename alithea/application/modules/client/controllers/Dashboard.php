@@ -337,7 +337,7 @@ class Dashboard extends MY_Controller
             unset($_SESSION['total_price']);
             unset($_SESSION['qty_order']);
 
-            $this->session->set_flashdata('success','Đặt hàng thành công');
+            $this->session->set_flashdata('success_order','Đặt hàng thành công');
             redirect(site_url(''));
         }else{
             redirect(site_url('shopping-cart'));
@@ -423,9 +423,7 @@ class Dashboard extends MY_Controller
                 
             }else{
                 $this->cart_add($pro_id, $_POST['color_pro'], $_POST['qty_inputs']);
-            }
-       
-           //$this->cart_update($pro_id, $_POST['color_pro']);          
+            }       
            
         }
 
@@ -439,8 +437,138 @@ class Dashboard extends MY_Controller
 
         //lấy comment của sp
         $this->load->model('client/listcomment_model');
-        $data['listcomment'] = $this->listcomment_model->comment_of_pro($pro_id);
+
+        if(isset($_GET["trang"]) ) 
+        {  
+            $start_index = $_GET["trang"] * 3 - 3 ;       
+        }else{
+            $start_index = 0;  
+        }
+
+        $limit_per_page = 3; //số bản ghi trên 1 trang
+        
+        $this->config->load('pagination', TRUE);
+        $config = $this->config->item('case1', 'pagination_conf');
+
+        $config['base_url'] = base_url("product-detail/$pro_id"); //Đường dẫn của từng đoạn phân trang
+        $config['total_rows'] = $this->listcomment_model->get_total($pro_id); //tổng số bản ghi
+        //$config['uri_segment'] = 2; //thực hiện việc lấy tham số trên đường dẫn url       
+
+        $config['use_page_numbers'] = TRUE;//su dung nut link dung voi url
+        
+        $config['page_query_string'] = TRUE;
+        $config['query_string_segment'] = 'trang';
+
+        $this->pagination->initialize($config); //khởi tạo phân trang
+        $pagination = $this->pagination->create_links(); //sinh ra các nút phân trang
+        $data['pagination'] = $pagination;//phân trang cho comment
+        
+        if($this->listcomment_model->list_pag_pro_comment($pro_id, $limit_per_page, $start_index) === FALSE){
+           
+        }else{
+            $data['listcomment'] = $this->listcomment_model->list_pag_pro_comment($pro_id, $limit_per_page, $start_index);
+            for($i = 0; $i < count($data['listcomment']); $i++){
+                $time_ago = strtotime($data['listcomment'][$i]['uploaded_on']);
+                $data['listcomment'][$i]['uploaded_on'] = $this->time_stamp($time_ago);
+            };
+        }
+
+        // $data['listcomment'] = $this->listcomment_model->comment_of_pro($pro_id);
+        // for($i = 0; $i < count($data['listcomment']); $i++){
+        //     $time_ago = strtotime($data['listcomment'][$i]['uploaded_on']);
+        //     $data['listcomment'][$i]['uploaded_on'] = $this->time_stamp($time_ago);
+        // };
       
         $this->load->view("client/product-detail", $data);
+    }
+
+    function time_stamp($time_ago)
+    {
+        $cur_time = time();//thời gian hiên tịa
+        $time_elapsed = $cur_time - $time_ago;
+        $seconds = $time_elapsed ;
+        $minutes = round($time_elapsed / 60 );
+        $hours = round($time_elapsed / 3600);
+        $days = round($time_elapsed / 86400 );
+        $weeks = round($time_elapsed / 604800);
+        $months = round($time_elapsed / 2600640 );
+        $years = round($time_elapsed / 31207680 );
+        // Seconds
+        if($seconds <= 60)
+        {
+            return " Cách đây $seconds giây ";
+        }
+        //Minutes
+        else if($minutes <=60)
+        {
+            if($minutes==1)
+            {
+                return " Cách đây 1 phút ";
+            }
+            else
+            {
+                return " Cách đây $minutes phút";
+            }
+        }
+        //Hours
+        else if($hours <=24)
+        {
+            if($hours==1)
+            {
+                return "Cách đây 1 tiếng ";
+            }
+            else
+            {
+                return " Cách đây  $hours tiếng ";
+            }
+        }
+        //Days
+        else if($days <= 7)
+        {
+            if($days==1)
+            {
+                return " Ngày hôm qua ";
+            }
+            else
+            {
+                return " Cách đây  $days ngày ";
+            }
+        }
+        //Weeks
+        else if($weeks <= 4.3)
+        {
+            if($weeks==1)
+            {
+                return " Cách đây 1 tuần ";
+            }
+            else
+            {
+                return " Cách đây  $weeks tuần";
+            }
+        }
+        //Months
+        else if($months <=12)
+        {
+            if($months==1)
+            {
+                return " Cách đây 1 tháng ";
+            }
+        else
+            {
+                return " Cách đây $months tháng";
+            }
+        }
+        //Years
+        else
+        {
+            if($years==1)
+            {
+                return " Cách đây 1 năm ";
+            }
+            else
+            {
+                return " Cách đây $years năm ";
+            }
+        }
     }
 }

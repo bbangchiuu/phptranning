@@ -293,6 +293,7 @@
                         <div class="clearfix"></div>
                     </form>
                     <ul class="media-list" id="list_commnet">
+                        <br>
                         <?php if(isset($listcomment)){
                             foreach($listcomment as $val){ ?>
 
@@ -316,7 +317,11 @@
                         }
                         ?>
                     </ul>
-                    
+                    <div class="col-sm-12">
+                        <?php if(isset($pagination)){
+                            echo $pagination;
+                        } ?>
+                    </div>
                 </div>
             </div>
         </div>
